@@ -39,6 +39,7 @@ Public Module ConexionDatos
                 comando.ExecuteNonQuery()
                 MessageBox.Show("Agregado exitosamente", "Sistema de lectores", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 cerrarConexion()
+                limpiar()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             Finally
@@ -49,33 +50,54 @@ Public Module ConexionDatos
     End Sub
 
     Public Sub modificarDatos()
+        Dim comando As New SqlCommand
+        If frmAlta.txtNombre.Text <> "" Then
+            Try
+                abrirConexion()
 
+                'utilizamos el procedimiento almacenado previamente creado
+                comando = New SqlCommand("Editar_Lector", conexion)
+                comando.CommandType = 4
+
+                'pasamos los valores por parametro
+                comando.Parameters.AddWithValue("@IdLector", frmAlta.txtIdentidad.Text.ToString)
+                comando.Parameters.AddWithValue("@Nombre", frmAlta.txtNombre.Text.ToString)
+                comando.Parameters.AddWithValue("@Telefono", frmAlta.txtTelefono.Text.ToString)
+                comando.Parameters.AddWithValue("@Direccion", frmAlta.txtDireccion.Text.ToString)
+                comando.Parameters.AddWithValue("@Observacion", frmAlta.txtObservacion.Text.ToString)
+                comando.ExecuteNonQuery()
+                MessageBox.Show("Modificado exitosamente", "Sistema de lectores", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                cerrarConexion()
+                limpiar()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            Finally
+            End Try
+        Else
+            MessageBox.Show("Por favor, completar datos importantes faltantes", "Sistema de lectores", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
-    'Public Sub modificarDatos()
-    '    Dim comando As New SqlCommand
-    '    If frmAlta.txtNombre.Text <> "" And frmAlta.txtIdentidad.Text <> "" Then
-    '        Try
-    '            abrirConexion()
-    '            comando = New SqlCommand("Insertar_Lector", conexion)
-    '            comando.CommandType = 4
+    Public Sub eliminar()
+        Dim comando As New SqlCommand
+        Try
+            abrirConexion()
 
-    '            comando.Parameters.AddWithValue("@IdLector", frmAlta.txtIdentidad.Text.ToString)
-    '            comando.Parameters.AddWithValue("@Nombre", frmAlta.txtNombre.Text.ToString)
-    '            comando.Parameters.AddWithValue("@Telefono", frmAlta.txtTelefono.Text.ToString)
-    '            comando.Parameters.AddWithValue("@Direccion", frmAlta.txtDireccion.Text.ToString)
-    '            comando.Parameters.AddWithValue("@Observacion", frmAlta.txtObservacion.Text.ToString)
-    '            comando.ExecuteNonQuery()
-    '            MessageBox.Show("Modificado exitosamente", "Sistema de lectores", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    '            cerrarConexion()
-    '        Catch ex As Exception
-    '            MessageBox.Show(ex.Message)
-    '        Finally
-    '        End Try
-    '    Else
-    '        MessageBox.Show("Por favor, completar datos importantes faltantes", "Sistema de lectores", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End If
-    'End Sub
+            'utilizamos el procedimiento almacenado previamente creado
+            comando = New SqlCommand("Eliminar_Lector", conexion)
+            comando.CommandType = 4
+
+            'pasamos los valores por parametro
+            comando.Parameters.AddWithValue("@IdLector", frmAlta.txtIdentidad.Text.ToString)
+            comando.ExecuteNonQuery()
+            MessageBox.Show("Eliminado exitosamente", "Sistema de lectores", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cerrarConexion()
+            limpiar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
 
     Public Sub mostrar()
         'auxiliares

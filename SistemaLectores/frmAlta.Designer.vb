@@ -34,6 +34,8 @@ Partial Class frmAlta
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblIdentidad
@@ -47,17 +49,19 @@ Partial Class frmAlta
         '
         'txtIdentidad
         '
+        Me.txtIdentidad.BackColor = System.Drawing.Color.White
         Me.txtIdentidad.Location = New System.Drawing.Point(179, 41)
         Me.txtIdentidad.Name = "txtIdentidad"
         Me.txtIdentidad.Size = New System.Drawing.Size(151, 20)
-        Me.txtIdentidad.TabIndex = 1
+        Me.txtIdentidad.TabIndex = 0
         '
         'txtNombre
         '
+        Me.txtNombre.BackColor = System.Drawing.Color.White
         Me.txtNombre.Location = New System.Drawing.Point(179, 79)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(151, 20)
-        Me.txtNombre.TabIndex = 3
+        Me.txtNombre.TabIndex = 1
         '
         'Label2
         '
@@ -70,10 +74,11 @@ Partial Class frmAlta
         '
         'txtTelefono
         '
+        Me.txtTelefono.BackColor = System.Drawing.Color.White
         Me.txtTelefono.Location = New System.Drawing.Point(179, 117)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(151, 20)
-        Me.txtTelefono.TabIndex = 5
+        Me.txtTelefono.TabIndex = 2
         '
         'Label3
         '
@@ -86,12 +91,13 @@ Partial Class frmAlta
         '
         'txtDireccion
         '
+        Me.txtDireccion.BackColor = System.Drawing.Color.White
         Me.txtDireccion.Location = New System.Drawing.Point(179, 155)
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtDireccion.Size = New System.Drawing.Size(151, 60)
-        Me.txtDireccion.TabIndex = 7
+        Me.txtDireccion.TabIndex = 3
         '
         'Label4
         '
@@ -104,12 +110,13 @@ Partial Class frmAlta
         '
         'txtObservacion
         '
+        Me.txtObservacion.BackColor = System.Drawing.Color.White
         Me.txtObservacion.Location = New System.Drawing.Point(179, 237)
         Me.txtObservacion.Multiline = True
         Me.txtObservacion.Name = "txtObservacion"
         Me.txtObservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservacion.Size = New System.Drawing.Size(151, 60)
-        Me.txtObservacion.TabIndex = 9
+        Me.txtObservacion.TabIndex = 4
         '
         'Label5
         '
@@ -122,29 +129,61 @@ Partial Class frmAlta
         '
         'btnAceptar
         '
+        Me.btnAceptar.BackColor = System.Drawing.Color.White
         Me.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAceptar.Location = New System.Drawing.Point(106, 344)
+        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAceptar.Location = New System.Drawing.Point(23, 344)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 10
+        Me.btnAceptar.Size = New System.Drawing.Size(70, 23)
+        Me.btnAceptar.TabIndex = 5
         Me.btnAceptar.Text = "Aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = True
+        Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
+        Me.btnCancelar.BackColor = System.Drawing.Color.White
         Me.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancelar.Location = New System.Drawing.Point(222, 344)
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Location = New System.Drawing.Point(284, 344)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 11
+        Me.btnCancelar.Size = New System.Drawing.Size(70, 23)
+        Me.btnCancelar.TabIndex = 7
         Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Location = New System.Drawing.Point(110, 344)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(70, 23)
+        Me.btnModificar.TabIndex = 6
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnEliminar.BackColor = System.Drawing.Color.White
+        Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Location = New System.Drawing.Point(197, 344)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(70, 23)
+        Me.btnEliminar.TabIndex = 16
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'frmAlta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ClientSize = New System.Drawing.Size(377, 409)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtObservacion)
@@ -157,6 +196,10 @@ Partial Class frmAlta
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtIdentidad)
         Me.Controls.Add(Me.lblIdentidad)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(393, 448)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(393, 448)
         Me.Name = "frmAlta"
         Me.Text = "frmAlta"
         Me.ResumeLayout(False)
@@ -176,4 +219,6 @@ Partial Class frmAlta
     Friend WithEvents Label5 As Label
     Friend WithEvents btnAceptar As Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnEliminar As Button
 End Class
